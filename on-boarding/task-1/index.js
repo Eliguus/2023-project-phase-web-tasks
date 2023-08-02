@@ -38,11 +38,6 @@ const activeStudentsData = _.filter(attendance, (data) => data.PresentDays > 85 
 console.log("Data of students with attendence greater than 85% are ", activeStudentsData)
 
 
-//Map
-const activeSudents = _.map(activeStudentsData, (data)=> data.Student)
-
-console.log("Students that are active ", activeSudents)
-
 //Max Value
 
 const maxVal = _.max(nums)
@@ -72,3 +67,8 @@ console.log(filledArray)
 //remove
 const removeEvens = _.remove(nums,(num)=>num%2==0)
 console.log(removeEvens)
+
+//Map
+const activeSudents = _.map(activeStudentsData, (data)=> data.Student)
+
+console.log("Students that are active ", activeSudents)
