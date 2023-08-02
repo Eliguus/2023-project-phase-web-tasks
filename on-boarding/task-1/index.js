@@ -52,9 +52,9 @@ console.log(groupOfTwo)
 
 
 //debounce
-const square = (num) => console.log(num*num)
+const square = () => console.log("square")
 
-const debounced = _.debounce(square,5)
+const debounced = _.debounce(square,500)
 debounced()
 debounced()
 debounced()
