@@ -1,0 +1,50 @@
+.todo-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .todo-item input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .todo-item span {
+    flex-grow: 1;
+    text-decoration: none;
+  }
+  
+  .deletebutton {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #e53935;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .editbutton {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: lightgray;
+    color: rgb(12, 12, 12);
+    border: none;
+    cursor: pointer;
+  }
+  .savebutton{
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: rgb(118, 120, 245);
+    color: rgb(10, 10, 17);
+    border: none;
+    cursor: pointer;
+  }
+
+  .editbutton:hover {
+    background-color: #ada2a2;
+  }
+  .deletebutton:hover {
+    background-color: #c62828;
+  }
+  .savebutton:hover{
+    background-color: #9594db;
+  }
