@@ -14,13 +14,21 @@ Tick It is a simple Todo app built using React using TypeScript, designed to hel
 To run the project in local enviroment, you can follow these steps:
 
 1. Clone the repository to your local machine:
-### `git clone https://github.com/Eliguus/2023-project-phase-web-tasks.git`
+```bash
+git clone https://github.com/Eliguus/2023-project-phase-web-tasks.git
+```
 2. Go into ToDo directory
-### `cd on-boarding/task-4/todo`
+```bash
+cd on-boarding/task-4/todo
+```
 3. Install dependencies using npm
-### `npm install`
+```bash
+npm install
+```
 4. Start development server
-### `npm start`
+```bash
+npm start
+```
 
 5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
