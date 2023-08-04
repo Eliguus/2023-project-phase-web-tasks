@@ -15,7 +15,9 @@ const Info: React.FC<InfoProps> = ({ label, value, site }) => {
     <div className="info">
       <span className="info-label">{label}:</span>
       <span className="info-value">{value}</span>
-      // conditional statment implemented if site exits link is posted
+{
+    // conditional statment implemented if site exits link is posted}
+}
       {site && <a href={site} className="info-value">{site}</a>}
     </div>
   );

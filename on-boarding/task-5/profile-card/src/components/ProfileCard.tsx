@@ -27,13 +27,17 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
 }) => {
   return (
     <Card>
+{
         // avatar component used
+}
       <Avatar image={image} alt={name} />
       <div className="profile-info">
         <h2>{name}</h2>
         <Info label="Age" value={age} />
         <Info label="Location" value={location} />
+{
         //conditional statment written cecking existance of site, and siteName
+}
         {site&&siteName&&
         <Info label={siteName} site={site}/>
         }
