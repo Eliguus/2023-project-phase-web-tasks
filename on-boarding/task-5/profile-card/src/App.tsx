@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
+import ProfileCard from './components/ProfileCard';
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
+  const user = {
+    name: 'John Doe',
+    age: 25,
+    location: 'New York',
+    image: 'https://i.imgur.com/7vQD0fPs.jpg',
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>User Profile</h1>
+      <ProfileCard
+        name={user.name}
+        age={user.age}
+        location={user.location}
+        image={user.image}
+      />
     </div>
   );
-}
+};
 
 export default App;

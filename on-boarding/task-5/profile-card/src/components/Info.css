@@ -1,0 +1,11 @@
+.info {
+    margin-bottom: 8px;
+  }
+  
+  .info-label {
+    font-weight: bold;
+  }
+  
+  .info-value {
+    margin-left: 4px;
+  }
