@@ -1,0 +1,32 @@
+.app {
+  text-align: center;
+  padding-top: 100px;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+span {
+  padding: 0 20px;
+  font-size: 24px;
+}
+
+p {
+  margin-top: 20px;
+}
+
+button.reset {
+  margin-top: 20px;
+}
