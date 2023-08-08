@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './AddContact.css';
+import { Contacts } from '../db';
 
 interface Contact {
   id: number;
@@ -14,40 +15,26 @@ const EditContact: React.FC = () => {
   const navigate = useNavigate()
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-
+  
   useEffect(() => {
     fetchContactDetails();
   }, []);
 
-  const fetchContactDetails = async () => {
-    try {
-      const response = await fetch(`http://localhost:3001/contacts/${id}`);
-      const data = await response.json();
+  const fetchContactDetails = () => {
+    
+      const data = Contacts[Number(id)-1];
       setName(data.name);
       setEmail(data.email);
-    } catch (error) {
-      console.error('Error fetching contact details:', error);
-    }
+    
   };
 
-  const handleEditContact = async () => {
-    try {
-      const response = await fetch(`http://localhost:3001/contacts/${id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email }),
-      });
-      if (response.ok) {
-        navigate('/')
-      } else {
-        console.error('Error editing contact');
-      }
-    } catch (error) {
-      console.error('Error editing contact:', error);
-    }
+  const handleEditContact = () => {
+    const profile = Contacts[Number(id)-1]
+    profile.name=name;
+    profile.email=email;
+    navigate("/")
   };
+  
 
   return (
     <div className='container'>

@@ -28,3 +28,11 @@
     border-radius: 3px;
     cursor: pointer;
   }
+  .editButton {
+    background-color: #412c2b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }

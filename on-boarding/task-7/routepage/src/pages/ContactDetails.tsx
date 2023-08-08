@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './AddContact.css';
+import { Contacts } from "../db";
 
 interface Contact {
   id: number;
@@ -17,14 +18,10 @@ const ContactDetails: React.FC = () => {
     fetchContactDetails();
   }, []);
 
-  const fetchContactDetails = async () => {
-    try {
-      const response = await fetch(`http://localhost:3001/contacts/${id}`);
-      const data = await response.json();
+  const fetchContactDetails = () => {
+      const data = Contacts[Number(id)-1];
       setContact(data);
-    } catch (error) {
-      console.error('Error fetching contact details:', error);
-    }
+    
   };
 
   if (!contact) {

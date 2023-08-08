@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import {Contacts} from '../db'
 
 interface Contact {
   id: number;
@@ -15,25 +16,15 @@ const Home: React.FC = () => {
     fetchContacts();
   }, []);
 
-  const fetchContacts = async () => {
-    try {
-      const response = await fetch('http://localhost:3001/contacts');
-      const data = await response.json();
-      setContacts(data);
-    } catch (error) {
-      console.error('Error fetching contacts:', error);
-    }
+  const fetchContacts = () => {
+      
+      setContacts(Contacts);
+    
   };
 
-  const handleDeleteContact = async (id: number) => {
-    try {
-      await fetch(`http://localhost:3001/contacts/${id}`, {
-        method: 'DELETE',
-      });
-      fetchContacts();
-    } catch (error) {
-      console.error('Error deleting contact:', error);
-    }
+  const handleDeleteContact = (id: number) => {
+    const newContacts = Contacts.filter((Contact:Contact)=>id!=Contact.id)
+    setContacts(newContacts)
   };
 
   return (
@@ -43,7 +34,10 @@ const Home: React.FC = () => {
         {contacts.map((contact) => (
           <li key={contact.id} className='contactItem'>
             <Link to={`/contacts/${contact.id}`} className='contactLink'>{contact.name}</Link>
+            <div className='contactItem'>
+            <Link to={`/edit/${contact.id}`} className='contactLink'> <button className='editButton'>Edit</button></Link>
             <button className='deleteButton' onClick={() => handleDeleteContact(contact.id)}>Delete</button>
+            </div>
           </li>
         ))}
       </ul>
