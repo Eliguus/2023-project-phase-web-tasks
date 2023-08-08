@@ -33,3 +33,10 @@ npm start
 
 * The page will reload if you make edits.
 * You will also see any lint errors in the console.
+
+
+## Takeaways
+* The useRef hook allows you to create a mutable ref object that can hold a value and persists across re-renders.
+* The useEffect hook is used to perform side effects in response to changes in dependencies. In this case, it updates the countRef and the document title whenever the count changes.
+* Refs can be used to access and manipulate DOM elements directly. In this code, increaseButton and decreaseButton refs are used to change the background colors of the buttons.
+* The useState hook is used to define and initialize the count state variable.
