@@ -1,0 +1,19 @@
+.navbar {
+  background-color: #f5f5f5;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.navbarLink {
+  margin-right: 10px;
+  color: #333;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
