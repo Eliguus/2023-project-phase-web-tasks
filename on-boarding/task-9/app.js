@@ -3,14 +3,40 @@ const recipes = [
     {
       id: 1,
       name: 'Recipe 1',
-      image: 'https://i.imgur.com/7vQD0fPs.jpg',
+      image: 'https://www.themealdb.com/images/media/meals/cgl60b1683206581.jpg',
       ingredients: ['Ingredient 1', 'Ingredient 2', 'Ingredient 3'],
       instructions: ['Step 1', 'Step 2', 'Step 3'],
     },
     {
       id: 2,
       name: 'Recipe 2',
-      image: 'https://i.imgur.com/7vQD0fPs.jpg',
+      image: 'https://www.themealdb.com/images/media/meals/bopa2i1683209167.jpg',
+      ingredients: ['Ingredient A', 'Ingredient B', 'Ingredient C'],
+      instructions: ['Step A', 'Step B', 'Step C'],
+    },{
+      id: 3,
+      name: 'Recipe 1',
+      image: 'https://www.themealdb.com/images/media/meals/cgl60b1683206581.jpg',
+      ingredients: ['Ingredient 1', 'Ingredient 2', 'Ingredient 3'],
+      instructions: ['Step 1', 'Step 2', 'Step 3'],
+    },
+    {
+      id: 4,
+      name: 'Recipe 2',
+      image: 'https://www.themealdb.com/images/media/meals/bopa2i1683209167.jpg',
+      ingredients: ['Ingredient A', 'Ingredient B', 'Ingredient C'],
+      instructions: ['Step A', 'Step B', 'Step C'],
+    },{
+      id: 5,
+      name: 'Recipe 1',
+      image: 'https://www.themealdb.com/images/media/meals/cgl60b1683206581.jpg',
+      ingredients: ['Ingredient 1', 'Ingredient 2', 'Ingredient 3'],
+      instructions: ['Step 1', 'Step 2', 'Step 3'],
+    },
+    {
+      id: 6,
+      name: 'Recipe 2',
+      image: 'https://www.themealdb.com/images/media/meals/bopa2i1683209167.jpg',
       ingredients: ['Ingredient A', 'Ingredient B', 'Ingredient C'],
       instructions: ['Step A', 'Step B', 'Step C'],
     },
@@ -42,7 +68,7 @@ const recipes = [
   
   // Function to show recipe details
   function showRecipeDetails(recipe) {
-    recipeImage.innerHTML = `<img src="${recipe.image}" alt="${recipe.name}" class="w-full">`;
+    recipeImage.innerHTML = `<img src="${recipe.image}" alt="${recipe.name}" class="w-1/2">`;
     recipeName.textContent = recipe.name;
     recipeIngredients.innerHTML = '';
     recipe.instructions.forEach(instruction => {
