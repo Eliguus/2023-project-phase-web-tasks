@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom"
 
-
 const Header = () => {
-    
 
     return (
         <header className="Header">
@@ -13,7 +11,6 @@ const Header = () => {
                     <li><Link to="post">Post</Link></li>
                     <li><Link to="user">Users</Link></li>
                 </ul>
-                
             </nav>
         </header>
     )

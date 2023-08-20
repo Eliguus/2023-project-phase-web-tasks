@@ -1,8 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectPostIds } from "./postsSlice";
 import PostsExcerpt from "./PostsExcerpt";
-import { useGetPostsQuery } from "./postsSlice";
-
+import { useGetPostsQuery } from './postsSlice';
 
 const PostsList = () => {
     const {
@@ -13,8 +12,7 @@ const PostsList = () => {
     } = useGetPostsQuery()
 
     const orderedPostIds = useSelector(selectPostIds)
-    
-    
+
     let content;
     if (isLoading) {
         content = <p>"Loading..."</p>;

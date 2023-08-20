@@ -1,20 +1,19 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
-
 import { selectAllUsers } from "../users/usersSlice";
 import { useNavigate } from "react-router-dom";
 import { useAddNewPostMutation } from "./postsSlice";
 
 const AddPostForm = () => {
-    const [addNewPost,{isLoading}] = useAddNewPostMutation()
+    const [addNewPost, { isLoading }] = useAddNewPostMutation()
 
     const navigate = useNavigate()
 
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const [userId, setUserId] = useState('')
-    
+
     const users = useSelector(selectAllUsers)
 
     const onTitleChanged = e => setTitle(e.target.value)
@@ -27,7 +26,7 @@ const AddPostForm = () => {
     const onSavePostClicked = async () => {
         if (canSave) {
             try {
-                await addNewPost({title,body:content,userId}).unwrap()
+                await addNewPost({ title, body: content, userId }).unwrap()
 
                 setTitle('')
                 setContent('')
@@ -35,9 +34,8 @@ const AddPostForm = () => {
                 navigate('/')
             } catch (err) {
                 console.error('Failed to save the post', err)
-            } 
+            }
         }
-
     }
 
     const usersOptions = users.map(user => (

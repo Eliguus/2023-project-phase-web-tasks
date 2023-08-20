@@ -1,8 +1,7 @@
 import { useSelector } from 'react-redux'
 import { selectUserById } from '../users/usersSlice'
-import { selectPostsByUser } from '../posts/postsSlice'
 import { Link, useParams } from 'react-router-dom'
-import { useGetPostsByIdQuery } from '../posts/postsSlice'
+import { useGetPostsByUserIdQuery } from '../posts/postsSlice'
 
 const UserPage = () => {
     const { userId } = useParams()
@@ -14,21 +13,20 @@ const UserPage = () => {
         isSuccess,
         isError,
         error
-    } = useGetPostsByIdQuery
+    } = useGetPostsByUserIdQuery(userId);
 
-    let content
-    if (isLoading){
+    let content;
+    if (isLoading) {
         content = <p>Loading...</p>
     } else if (isSuccess) {
-        const {ids, entities} = postsForUser
-        content = ids.map(id=>(
+        const { ids, entities } = postsForUser
+        content = ids.map(id => (
             <li key={id}>
-                <Link to = {`/post/${id}`}>{entities[id].title}</Link>
+                <Link to={`/post/${id}`}>{entities[id].title}</Link>
             </li>
         ))
-    }
-    else if (isError){
-        content = <p>{error}</p>
+    } else if (isError) {
+        content = <p>{error}</p>;
     }
 
     return (
